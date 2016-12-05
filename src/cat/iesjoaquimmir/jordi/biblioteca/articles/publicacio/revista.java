@@ -32,7 +32,7 @@ public class revista extends publicacio {
     //<editor-fold defaultstate="collapsed" desc="Metodes Estatics">
         @Override
             public String toString() {
-                return String.format("Revista: %n"
+                return String.format("%nRevista: %n"
                         + "---------------"
                         + "%s%nISSN: %s %n", super.toString(), getIssn()); //To change body of generated methods, choose Tools | Templates.
             }

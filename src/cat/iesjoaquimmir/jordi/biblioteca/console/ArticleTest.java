@@ -154,6 +154,7 @@ public class ArticleTest {
                     }else if(cat.equals("ADULT")){
                         discVersatilDigital artDVD = new discVersatilDigital(titol, autor, Categoria.ADULT, durada, isan);
                         articles.add(artDVD);
+                        
                     }   
                     //System.out.printf("%n %s %n", articles.get(3).toString());
                     break;

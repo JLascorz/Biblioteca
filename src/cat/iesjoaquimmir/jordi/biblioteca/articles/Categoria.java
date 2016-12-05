@@ -8,18 +8,25 @@ public enum Categoria {
          
     //</editor-fold>
 //</editor-fold>
-    INFANTIL("INFANTIL"),
-    JUVENIL("JUVENIL"),
-    ADULT("ADULT");
+    INFANTIL("INFANTIL",false),
+    JUVENIL("JUVENIL",false),
+    ADULT("ADULT",true);
     
     private final String Missatge;
-    
-    Categoria(String Missatge){
-        this.Missatge = Missatge;
-    }
+    private final boolean comp;
     
     public String getMissatge(){
         return Missatge;
     }
+
+    public boolean getComp() {
+        return comp;
+    }
+      
+    Categoria(String Missatge, boolean comp){
+        this.Missatge = Missatge;
+        this.comp = comp;
+    }
+
     
 }

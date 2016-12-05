@@ -32,7 +32,7 @@ public class llibre extends publicacio {
     //<editor-fold defaultstate="collapsed" desc="Metodes Estatics">
         @Override
             public String toString() {
-                return String.format("Llibre: %n"
+                return String.format("%nLlibre: %n"
                         + "---------------"
                         + "%s%nISBN: %s %n", super.toString(), getIsbn()); //To change body of generated methods, choose Tools | Templates.
             }

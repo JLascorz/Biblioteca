@@ -32,7 +32,7 @@ public class discVersatilDigital extends multimedia {
     //<editor-fold defaultstate="collapsed" desc="Metodes Estatics">
         @Override
             public String toString() {
-                return String.format("DVD: %n"
+                return String.format("%nDVD: %n"
                         + "---------------"
                         + "%s%nISAN: %s %n", super.toString(), getIsan()); //To change body of generated methods, choose Tools | Templates.
             }

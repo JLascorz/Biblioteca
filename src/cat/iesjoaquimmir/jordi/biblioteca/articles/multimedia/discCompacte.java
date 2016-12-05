@@ -32,7 +32,7 @@ public class discCompacte extends multimedia{
     //<editor-fold defaultstate="collapsed" desc="Metodes Estatics">
         @Override
             public String toString() {
-                return String.format("CD: %n"
+                return String.format("%nCD: %n"
                         + "---------------"
                         + "%s%nISMN: %s %n", super.toString(), getIsmn()); //To change body of generated methods, choose Tools | Templates.
             }
