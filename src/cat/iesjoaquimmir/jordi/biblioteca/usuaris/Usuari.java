@@ -6,6 +6,7 @@ import cat.iesjoaquimmir.jordi.biblioteca.articles.Article;
 import cat.iesjoaquimmir.jordi.biblioteca.articles.Categoria;
 import cat.iesjoaquimmir.jordi.biblioteca.articles.publicacio.llibre;
 import java.util.ArrayList;
+import java.util.Objects;
 
 public abstract class Usuari {
 //<editor-fold defaultstate="collapsed" desc="Atributs">
@@ -15,7 +16,7 @@ public abstract class Usuari {
         private String segon_cognom;
         public boolean conte;
         public boolean permis;
-        public ArrayList<Article> articles;
+        private ArrayList<Article> articles;
         private int i=0;
 //</editor-fold>
 //<editor-fold defaultstate="collapsed" desc="Metodes">
@@ -125,21 +126,35 @@ public abstract class Usuari {
         }
     }
     
-    public boolean equals(Usuari us){
-        Boolean vacio = null;
-        if(us == null){
-            vacio = false;
+    @Override
+    public boolean equals(Object o){
+
+        if(this == o){
+            return true;
         }
-        if(us.nom == null){
-            vacio = false;
+        if(o == null){
+            return false;
         }
-        if(us.primer_cognom == null){
-            vacio = false;
+        Usuari usu = (Usuari) o;
+        if(nom != usu.nom){
+            return false;
         }
-        if(us.segon_cognom == null){
-            vacio = false;
+        if(primer_cognom == null || !primer_cognom.equals(usu.primer_cognom)){
+            return false;
         }
-        return vacio;
+        if (segon_cognom != usu.segon_cognom && (segon_cognom == null || !segon_cognom.equals(usu.segon_cognom))){
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 79 * hash + Objects.hashCode(this.nom);
+        hash = 79 * hash + Objects.hashCode(this.primer_cognom);
+        hash = 79 * hash + Objects.hashCode(this.segon_cognom);
+        return hash;
     }
      
     @Override

@@ -190,10 +190,12 @@ public class UsuariTest {
                     permis = input.next();
                     if(permis.equals("P")){
                     UsuariAdult adult = new UsuariAdult(nom, primerCognom, segonCognom, dni, Carnet.P);
-                    usuaris.add(adult);
+                    hashEqual(adult);
+                    //usuaris.add(adult);
                     }else if(permis.equals("N")){
                     UsuariAdult adult = new UsuariAdult(nom, primerCognom, segonCognom, dni, Carnet.N);
-                    usuaris.add(adult);
+                    hashEqual(adult);
+                    //usuaris.add(adult);
                     }
                     
                     numUsu = usuaris.size() -1 ;
@@ -216,7 +218,7 @@ public class UsuariTest {
                     switch(numSubMenu){
                         //<editor-fold defaultstate="collapsed" desc="Llibre">
                         case 1:
-                           usuaris.get(numUsu).agafaArticle(articles.get(0));
+                           usuaris.get(0).agafaArticle(articles.get(0));
                         break;
                         //</editor-fold>
                         //<editor-fold defaultstate="collapsed" desc="Revista">
@@ -270,16 +272,17 @@ public class UsuariTest {
         //for (Article a : articles) System.out.println(a);
     }   
     
-    /*public static void hashCode(Usuari usu){
-        int user = 0;
-        for(int x=0; x<usuaris.size(); x++){
-            for(int j=x+1; j<usuaris.size(); j++){
-                if(usuaris.get(j) != usuaris.get(x)){
-                    usuaris.add(usu);
-                }
+    public static void hashEqual(Usuari usu){
+        
+        for (int i = 0; i < usuaris.size(); i++) {
+            
+            if( usuaris.get(i).equals(usu) == true && usuaris.get(i).hashCode() == usu.hashCode()){
+                System.out.println("Hola");
+                usuaris.add(usu);
             }
         }
-    }*/
+        
+    }
     
     
 }
